@@ -23,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>MilkenTelligence</title>
         <Script
           src={chatkitScriptSrc}
           strategy="beforeInteractive"
