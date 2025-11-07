@@ -8,6 +8,7 @@ import {
   GREETING,
   CREATE_SESSION_ENDPOINT,
   WORKFLOW_ID,
+  DOMAIN_KEY,
   getThemeConfig,
 } from "@/lib/config";
 import { ErrorOverlay } from "./ErrorOverlay";
@@ -262,7 +263,10 @@ export function ChatKitPanel({
   );
 
   const chatkit = useChatKit({
-    api: { getClientSecret },
+    api: { 
+      getClientSecret,
+      ...(DOMAIN_KEY ? { domainKey: DOMAIN_KEY } : {}),
+    },
     theme: {
       colorScheme: theme,
       ...getThemeConfig(theme),
@@ -327,6 +331,13 @@ export function ChatKitPanel({
       // Note that Chatkit UI handles errors for your users.
       // Thus, your app code doesn't need to display errors on UI.
       console.error("ChatKit error", error);
+      if (isDev) {
+        console.error("[ChatKitPanel] Error details:", {
+          error,
+          domainKey: DOMAIN_KEY ? `${DOMAIN_KEY.substring(0, 20)}...` : "not set",
+          workflowId: WORKFLOW_ID,
+        });
+      }
     },
   });
 
