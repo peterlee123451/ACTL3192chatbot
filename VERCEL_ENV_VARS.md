@@ -5,8 +5,8 @@ Use these environment variables when setting up your project in Vercel:
 ## Required Environment Variables
 
 ```
-OPENAI_API_KEY=your_openai_api_key_here
-NEXT_PUBLIC_CHATKIT_WORKFLOW_ID=wf_your_workflow_id_here
+OPENAI_API_KEY=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
+NEXT_PUBLIC_CHATKIT_WORKFLOW_ID=wf_690d507145908190b168177d704f0d9c0321d0587a32cfcc
 NEXT_PUBLIC_CHATKIT_DOMAIN_KEY=domain_pk_690d602a7038819094d42fc7e45c64bc047c13396cb7058f
 ```
 
@@ -20,9 +20,9 @@ CHATKIT_API_BASE=https://api.openai.com
 
 1. Go to your Vercel project settings
 2. Navigate to "Environment Variables"
-3. Add each variable above:
-   - **OPENAI_API_KEY**: Your OpenAI API key (created in the same org & project as your Agent Builder)
-   - **NEXT_PUBLIC_CHATKIT_WORKFLOW_ID**: Your workflow ID from Agent Builder (starts with `wf_...`)
+3. Add each variable above (copy-paste ready values):
+   - **OPENAI_API_KEY**: `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`
+   - **NEXT_PUBLIC_CHATKIT_WORKFLOW_ID**: `wf_690d507145908190b168177d704f0d9c0321d0587a32cfcc`
    - **NEXT_PUBLIC_CHATKIT_DOMAIN_KEY**: `domain_pk_690d602a7038819094d42fc7e45c64bc047c13396cb7058f`
    - **CHATKIT_API_BASE** (optional): Default is `https://api.openai.com`
 
