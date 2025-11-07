@@ -34,6 +34,12 @@ yarn-error.log*
 .env*
 !.env.example
 
+# Files containing sensitive keys
+VERCEL_ENV_VARS.md
+vercel-env-setup.txt
+*env-setup*
+*env-vars*
+
 # vercel
 .vercel
 
