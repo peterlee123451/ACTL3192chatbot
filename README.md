@@ -54,11 +54,48 @@ Visit `http://localhost:3000` and start chatting. Use the prompts on the start s
 
 ### 5. Deploy your app
 
+#### Deploy to Vercel
+
+This project is configured for easy deployment to Vercel. Follow these steps:
+
+1. **Push your code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Import project to Vercel**
+   - Go to [Vercel](https://vercel.com) and sign in
+   - Click "Add New..." → "Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect Next.js and configure the project
+
+3. **Configure Environment Variables**
+   In your Vercel project settings, add the following environment variables:
+   - `OPENAI_API_KEY` - Your OpenAI API key (created in the same org & project as your Agent Builder)
+   - `NEXT_PUBLIC_CHATKIT_WORKFLOW_ID` - Your workflow ID (starts with `wf_...`)
+   - `CHATKIT_API_BASE` (optional) - Custom base URL for ChatKit API endpoint
+
+4. **Domain Allowlist Configuration**
+   Before deploying, you need to add your Vercel domain to the OpenAI domain allowlist:
+   - Go to [Domain Allowlist](https://platform.openai.com/settings/organization/security/domain-allowlist)
+   - Add your Vercel domain (e.g., `your-app.vercel.app` or your custom domain)
+   - This is required for ChatKit to work on your deployed domain
+
+5. **Deploy**
+   - Click "Deploy" in Vercel
+   - Your app will be built and deployed automatically
+   - Once deployed, visit your app URL to verify everything works
+
+#### Local Build Test
+
+To test the production build locally before deploying:
+
 ```bash
 npm run build
+npm start
 ```
-
-Before deploying your app, you need to verify the domain by adding it to the [Domain allowlist](https://platform.openai.com/settings/organization/security/domain-allowlist) on your dashboard.
 
 ## Customization Tips
 
